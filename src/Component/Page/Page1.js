@@ -1,12 +1,13 @@
 import { SaveAlt, Bookmarks } from "@mui/icons-material";
 import { Button, Grid, Paper, TextareaAutosize, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import Page2 from "../Page2/Page2";
 
 function Page1() {
   return (
     <>
-    <Grid container rowSpacing={2} columnSpacing={2} sx={{backgroundColor:'#F5F5F5',p:2}}>
-      <Grid item xs={12} sm={12} md={5} lg={5}>
+    <Grid container sx={{backgroundColor:'#F5F5F5',margin:'none'}}>
+      <Grid item xs={12} sm={12} md={5} lg={5} sx={{p:1}} >
         <Paper elevation={0} sx={{ p:2, mb:1, display:'flex', direction:'row', alignItems:'center' }}>
           <Typography variant="h6" sx={{ color:'gray', fontSize:'25px' }}>
             1AVDcXSE
@@ -20,7 +21,7 @@ function Page1() {
             </Button>
           </Box>
         </Paper>
-        <Paper elevation={2} sx={{p:2,height:'87vh'}}>
+        <Paper elevation={0} sx={{p:2,height:'87vh'}}>
           <TextField
             aria-label="empty textarea"
             variant="standard"
@@ -34,14 +35,12 @@ function Page1() {
           />
         </Paper>
       </Grid>
-      <Grid item xs={12} sm={12} md={4} lg={4}>
+      <Grid item xs={12} sm={12} md={4} lg={4} sx={{p:1}}>
         <Paper elevation={0} variant='outlined' sx={{p:2}}>
-            <Typography>
-              Hello
-            </Typography>
+            <Page2/>
         </Paper>
       </Grid>
-      <Grid item xs={12} sm={12} md={3} lg={3}>
+      <Grid item xs={12} sm={12} md={3} lg={3} sx={{p:1}}>
         <Paper elevation={0} sx={{p:2}}>
           <Typography>
             Hello
