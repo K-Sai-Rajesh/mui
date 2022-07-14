@@ -11,11 +11,11 @@ export function Page() {
         <Page1/>
       </Grid>
       <Grid item xs={12} sm={12} md={4} lg={4}>
-        <Paper elevation={0} sx={{maxHeight:'100vh'}}>
+        <Paper elevation={0}>
             <Page2/>
         </Paper>
       </Grid>
-      <Grid item xs={12} sm={12} md={4} lg={3} sx={{height:'100vh'}}>
+      <Grid item xs={12} sm={12} md={4} lg={3}>
           <Page3 />
       </Grid>
     </Grid>

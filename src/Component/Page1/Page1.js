@@ -1,5 +1,5 @@
 import { Bookmarks, FormatAlignCenterRounded, FormatAlignLeftRounded, FormatBold, FormatItalic, FormatStrikethroughRounded, FormatUnderlined, SaveAlt } from "@mui/icons-material"
-import { Button, Grid, Paper, TextareaAutosize, TextField, Typography } from "@mui/material"
+import { Button, Paper, TextareaAutosize, TextField, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 
 export default function Page1(){

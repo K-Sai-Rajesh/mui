@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Grid, useMediaQuery, useTheme } from '@mui/material';
+import { Headline } from '../AIComponents/Headlines/Headline';
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -140,28 +141,10 @@ export default function Page2() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0} sx={{width:'100%',height:'100%'}}>
-        <Grid container sx={{width:'100%',height:'100%',p:2}}>
-          <Grid item>
-            <Typography 
-              variant='h4'
-              component='p'
-            >
-              AI Analysis
-            </Typography>
-          </Grid>
-        </Grid>
+        <Headline />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Grid container sx={{width:'100%',height:'100%',p:2}}>
-          <Grid item>
-            <Typography 
-              variant='h4'
-              component='p'
-            >
-              Panel Analysis
-            </Typography>
-          </Grid>
-        </Grid>
+        <Headline />
       </TabPanel>
     </Box>
   );

@@ -62,8 +62,6 @@ export default function Page3() {
               </ListItemText>
             </Box>
               </ListItem>
-              <ListItem>
-            </ListItem>
             {
               data.map(item => {
                 let color = {color:item.color}
