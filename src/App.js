@@ -1,10 +1,8 @@
-import Page1 from "./Component/Page/Page1";
+import { Page } from "./Component/Page/Page";
 
 function App() {
   return (
-    <>
-    <Page1/>
-    </>
+    <Page />
   );
 }
 

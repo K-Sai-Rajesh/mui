@@ -21,7 +21,7 @@ function TabPanel(props) {
   );
 }
 
-export default function BasicTabs() {
+export default function Page2() {
   const [value, setValue] = React.useState(0);
 
   const theme = useTheme()
