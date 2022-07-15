@@ -9,6 +9,7 @@ export default function Page1(){
             <Typography variant="h6" sx={{ pl:1,color:'gray', fontSize:'21px' }}>
                 1AVDcXSE
             </Typography>
+             
             <Box sx={{marginLeft:'auto',display:'flex',flexDirection:'row'}}>            
                 <Button sx={{selfAlign:'end'}}variant="primary">
                 <Bookmarks sx={{fontSize:'20px',color:'#DCDCDC'}} />
@@ -18,6 +19,7 @@ export default function Page1(){
                 </Button>
             </Box>
             </Paper>
+
             <Paper elevation={0} sx={{p:2,height:'70vh'}}>
             <TextField
                 aria-label="empty textarea"
@@ -31,6 +33,7 @@ export default function Page1(){
                 style={{ width:"100%", border:'none',height:'95%' }}
             />
             </Paper>
+
             <Paper elevation={0} sx={{display:'flex', direction:'row', p:1,mt:1}}>
             <Box sx={{marginRight:'auto',display:'flex',flexDirection:'row',overflow:'auto'}}>
                 <Button sx={{selfAlign:'start'}}variant="primary">
