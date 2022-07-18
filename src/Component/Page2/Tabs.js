@@ -2,8 +2,9 @@ import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useMediaQuery, useTheme } from '@mui/material';
-import { Headline } from '../AIComponents/Headlines/Headline';
 import { AppContext } from '../GlobalState/AppContext';
+import { AIRouting } from '../AIComponents/AIRouting/AIRouting';
+import Tone from '../AIComponents/Tone/Tone';
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -146,10 +147,12 @@ export default function NewTabs() {
           }}/>
         </Tabs>
         <TabPanel value={value} index={0} sx={{width:'100%',height:'100%'}}>
-          <h1>Home</h1>
+          {
+            AIRouting()
+          }
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <Headline />
+          <Tone/>
         </TabPanel>
     </>
   );

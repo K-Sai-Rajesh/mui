@@ -1,23 +1,24 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import NewTabs from './Tabs';
-import Default from '../AIComponents/Default/Default';
 import { AppContext } from '../GlobalState/AppContext';
+import Tone from '../AIComponents/Tone/Tone';
 
 
 export default function Page2() {
 
   const data = React.useContext(AppContext)
-  console.log(data)
+
+  function Components(){
+    if(data.Tone) return <Tone />
+    else return <NewTabs />
+  }
 
   return (
     <>
-      <Box sx={{ width: '100%', height:'100%' }}>
+      <Box sx={{ width: '100%' }}>
         {
-          data.AI ? 
-          <NewTabs />
-          :
-          <Default/>
+          Components()
         }
       </Box>
     </>

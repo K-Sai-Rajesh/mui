@@ -1,10 +1,14 @@
 
-import { CalendarMonth, FiberManualRecordSharp } from '@mui/icons-material'
+import { CalendarMonth, FiberManualRecordSharp} from '@mui/icons-material'
 import { List, ListItem, ListItemIcon, ListItemText, Paper, Typography,LinearProgress } from '@mui/material'
 import { Box } from '@mui/system'
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { AppContext } from '../GlobalState/AppContext'
 
 export default function Page3() {
+
+  const app = useContext(AppContext)
+
   const data = [
     {
       
@@ -13,7 +17,7 @@ export default function Page3() {
       color:'warning',
       value:1,
       isTrue : false,
-      backgroundColor:'#ffcdd2'
+      backgroundColor:'rgba(255,138,101,0.4)'
     },
     {
       id:1,
@@ -21,7 +25,7 @@ export default function Page3() {
       color:'success',
       value:1,
       isTrue : false,
-      backgroundColor:'#80cbc4'      
+      backgroundColor:'rgba(43,187,173,0.2)'      
     },
     {
       id:2,
@@ -29,7 +33,7 @@ export default function Page3() {
       color:'primary',
       value:1,
       isTrue : false,
-      backgroundColor:'#5c6bc0'
+      backgroundColor: 'rgba(140, 158, 255,0.5)'
     },
     {
       id:3,
@@ -37,7 +41,7 @@ export default function Page3() {
       color:'secondary',
       value:1,
       isTrue : false,
-      backgroundColor:'#ffcdd2'
+      backgroundColor:'rgba(230, 230, 250)'
     },
     {
       id:4,
@@ -45,7 +49,7 @@ export default function Page3() {
       color:'error',
       value:1,
       isTrue : false,
-      backgroundColor:'#f48fb1'
+      backgroundColor:'rgba(255,148,148,0.6)'
     },
   ]
   const styles = {
@@ -56,27 +60,39 @@ export default function Page3() {
     width:'100%'
   }
 
-  function handlePaper(item){
+  const [highlight,setHighlight] = useState('')
+
+  function handlePaper(item){  
+    for(let dat of data){
+      if(dat.name === item.name){
+        app[`set${item.name}`](true)
+        setHighlight(item.name)
+      }
+      else{
+        app[`set${dat.name}`](false)
+      }
+    }
     
   }
 
   return (
     <>
         <Paper elevation={0} sx={{p:3}}>
-          <Typography variant='h6' sx={{textAlign:"center",color:"#FFD700",padding:'3px'}}><CalendarMonth />&ensp;Ai Analysis</Typography>
+          <Typography variant='h6' sx={{textAlign:"center",color:"#FFD700",padding:'1px',fontSize:'16px'}}><CalendarMonth />&ensp;AI ANALYSIS</Typography>
         </Paper>
         <Paper>
-          <List sx={{p:4,mt:1,display:"flex",flexDirection:"column",justifyContent:"space-around",}}>
+          <List sx={{p:4,mt:1,display:"flex",flexDirection:"column",justifyContent:"space-around"}}>
             {
               data.map(item => {
-                let color = {color:item.color}
+                let color = {color:item.color} 
 
                 let elevate = 0
                 let backgroundcolor = null
-                if(item.isTrue) {
-                  elevate = 1
-                  backgroundcolor = item.backgroundColor
-                }
+                  if(highlight === item.name){
+                    elevate = 1
+                    backgroundcolor = item.backgroundColor
+                  }
+                
 
                 return(
                   <Paper elevation={elevate} sx={{m:1, backgroundColor:backgroundcolor}}  onClick={() => handlePaper(item)}>

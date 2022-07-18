@@ -14,24 +14,24 @@ export function Headline(){
 
       const review = {
         length:{
-          name : 'Length',
-          error:true
+          id:1,
+          name : 'Length is between 5 and 15 words',
         },
         stat : {
-          name : 'Statistics',
-          error:false
+          name : 'Statistics and Numbers',
+          error:false,
         },
         active :{
           name : 'Active Voice',
-          error:false
+          error:true,
         },
         punch :{
-          name : 'Punctuation Marks',
-          error:false
+          name : 'Punctuations',
+          error:false,
         },
         power : {
-          name : 'Power Word',
-          error:false
+          name : 'Power Word (Eg : Awesome,Supercharge)',
+          error:false,
         }
       }      
       
@@ -48,7 +48,7 @@ export function Headline(){
             
             <Box sx={styles}>
               <ListItemText>
-                <Typography variant='h6' sx={{fontSize:'15px',fontWeight:'bold'}} >Sentence Length</Typography>
+                <Typography variant='h6' sx={{fontSize:'15px',fontWeight:'bold',color:'graytext'}} >Sentence Length</Typography>
               </ListItemText>
               <ListItemText>
                 <Typography variant='h6' sx={{color:'green',fontSize:'10px',fontWeight:'bold',textAlign:'right'}} >Good</Typography>
@@ -60,16 +60,16 @@ export function Headline(){
                 <LinearProgress variant='determinate' color='error' sx={{backgroundColor:'#F5F5F5',borderRadius:"20px",padding:"4px"}} value={100} />
               </ListItemText>&nbsp;
               <ListItemText>
-                <LinearProgress variant='determinate' color='warning' sx={{backgroundColor:'#f5f5f5',borderRadius:"20px",padding:"4px"}} value={100} />
+                <LinearProgress variant='determinate' color='warning' sx={{backgroundColor:'#f5f5f5',borderRadius:"20px",padding:"4px"}} value={0} />
               </ListItemText>&nbsp;
               <ListItemText>
-                <LinearProgress variant='determinate' color='success' sx={{backgroundColor:'#F5F5F5',borderRadius:"20px",padding:"4px"}} value={100} />
+                <LinearProgress variant='determinate' color='success' sx={{backgroundColor:'#F5F5F5',borderRadius:"20px",padding:"4px"}} value={0} />
               </ListItemText>
             </Box>
             
             <Box sx={styles}>
               <ListItemText>
-                <Typography variant='h5' sx={{fontSize:'10px',fontWeight:"bold",color:'lightgrey'}}>new</Typography>
+                <Typography variant='h5' sx={{fontSize:'12px',fontWeight:"bold",color:'Graytext'}}>new</Typography>
               </ListItemText>
             </Box>
           
@@ -91,7 +91,7 @@ export function Headline(){
 
               <Box sx={styles}>
                 <ListItemText>
-                  <LinearProgress variant='determinate' color='warning' sx={{backgroundColor:'#F5F5F5',borderRadius:"20px",padding:"4px"}} value={50} />
+                  <LinearProgress variant='determinate' color='warning' sx={{backgroundColor:'#A9A9A9',borderRadius:"20px",padding:"4px"}} value={50} />
                 </ListItemText>
               </Box>
 
@@ -101,7 +101,7 @@ export function Headline(){
                     Object.keys(review).map((key) =>{
                       return(
                         <>
-                          <ListItem sx={{p:0}}>
+                          <ListItem key={key} sx={{p:0}}>
                             {
                               review[`${key}`].error ? 
                                 <>
@@ -109,7 +109,7 @@ export function Headline(){
                                 </> 
                                 :
                                 <>
-                                  <Done sx={{fontSize:'15px',color:'lightgrey'}} />&ensp;
+                                  <Done sx={{fontSize:'15px',color:'green'}} />&ensp;
                                 </>
                             }
                             <ListItemText>{review[`${key}`].error ? <Typography variant='h6' sx={{fontWeight:"bold",fontSize:'13px', color:'lightgrey'}}>{review[`${key}`].name}</Typography> :<Typography variant='h6' sx={{fontWeight:"bold",fontSize:'13px  '}}>{review[`${key}`].name}</Typography>}</ListItemText>
@@ -126,7 +126,7 @@ export function Headline(){
                 </Paper>
                 
                 <ListItemText>
-                  <Typography variant='h6' sx={{pl:2,fontWeight:"bold",fontSize:'10px',color:'lightgrey'}}>Try using more Power Words to boost your Impact Sooner.</Typography>
+                  <Typography variant='h6' sx={{p:2,fontWeight:"bold",fontSize:'12px',color:'lightgrey'}}>Try using more Power Words to boost your Impact Sooner.</Typography>
                 </ListItemText>
                 
                 </Box>

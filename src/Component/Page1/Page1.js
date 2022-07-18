@@ -4,7 +4,7 @@ import { Box } from "@mui/system"
 
 export default function Page1(){
     return(
-        <>
+        <Box>
             <Paper elevation={0} sx={{ mb:1, display:'flex', direction:'row' ,p:3 }}>
             <Typography variant="h6" sx={{ pl:1,color:'gray', fontSize:'21px' }}>
                 1AVDcXSE
@@ -30,11 +30,11 @@ export default function Page1(){
             <TextareaAutosize
                 aria-label="empty textarea"
                 placeholder="content"
-                style={{ width:"100%", border:'none',height:'95%' }}
+                style={{ width:"100%", border:'none' }}
             />
             </Paper>
 
-            <Paper elevation={0} sx={{display:'flex', direction:'row', p:1,mt:1}}>
+            <Paper elevation={0} sx={{display:'flex', direction:'row', p:1}}>
             <Box sx={{marginRight:'auto',display:'flex',flexDirection:'row',overflow:'auto'}}>
                 <Button sx={{selfAlign:'start'}}variant="primary">
                 <FormatBold sx={{fontSize:'20px',color:'grey'}} />
@@ -63,10 +63,10 @@ export default function Page1(){
             </Box>
             <Box sx={{marginLeft:'auto',display:'flex', flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
                 <Button variant="primary">
-                <Typography variant="h6"  sx={{fontSize:'10px',color:'grey'}}>WordCount : {}</Typography>
+                    <Typography variant="h6"  sx={{fontSize:'10px',color:'grey'}}>WordCount : {}</Typography>
                 </Button>
             </Box>
             </Paper>
-        </>
+        </Box>
     )
 }
