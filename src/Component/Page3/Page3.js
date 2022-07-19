@@ -76,11 +76,10 @@ export default function Page3() {
   }
 
   return (
-    <>
+    <Paper elevation={0} sx={{height:'100%'}}>
         <Paper elevation={0} sx={{p:3}}>
           <Typography variant='h6' sx={{textAlign:"center",color:"#FFD700",padding:'1px',fontSize:'16px'}}><CalendarMonth />&ensp;AI ANALYSIS</Typography>
         </Paper>
-        <Paper>
           <List sx={{p:4,mt:1,display:"flex",flexDirection:"column",justifyContent:"space-around"}}>
             {
               data.map(item => {
@@ -88,7 +87,8 @@ export default function Page3() {
 
                 let elevate = 0
                 let backgroundcolor = null
-                  if(highlight === item.name){
+                  
+                if(highlight === item.name){
                     elevate = 1
                     backgroundcolor = item.backgroundColor
                   }
@@ -99,37 +99,34 @@ export default function Page3() {
                     <ListItem sx={{
                       flexDirection:'column'
                     }}>
-                    <Box sx={styles}>
-                      <ListItemIcon>
-                        <FiberManualRecordSharp {...color} sx={{fontSize:"medium"}} />
-                      </ListItemIcon>
-                      <ListItemText>
-                        <Typography variant='h5' sx={{fontWeight:"bold"}}>{item.name}</Typography>
-                      </ListItemText>
-                    </Box>
-                    <Box sx={styles}>
-                      <ListItemText sx={{pl:7}}>
-                      {
-                          item.id === 0 ? <Typography variant='h6'>Impact Score: </Typography> : <Typography variant='h6'>0 Alerts </Typography>
-                      }
-                      </ListItemText>
-                    </Box>
-                    <Box sx={styles}>
-                      <ListItemText sx={{pl:7}}>
+                      <Box sx={styles}>
+                        <ListItemIcon>
+                          <FiberManualRecordSharp {...color} sx={{fontSize:"medium"}} />
+                        </ListItemIcon>
+                        <ListItemText>
+                          <Typography variant='h5' sx={{fontWeight:"bold"}}>{item.name}</Typography>
+                        </ListItemText>
+                      </Box>
+                      <Box sx={styles}>
+                        <ListItemText sx={{pl:7}}>
                         {
-                          item.id === 0 ? null : <LinearProgress variant='determinate' {...color} sx={{backgroundColor:'#F5F5F5',borderRadius:"20px",padding:"4px"}} value={item.value} />
+                            item.id === 0 ? <Typography variant='h6'>Impact Score: </Typography> : <Typography variant='h6'>0 Alerts </Typography>
                         }
-                      </ListItemText>
-                    </Box>
+                        </ListItemText>
+                      </Box>
+                      <Box sx={styles}>
+                        <ListItemText sx={{pl:7}}>
+                          {
+                            item.id === 0 ? null : <LinearProgress variant='determinate' {...color} sx={{backgroundColor:'#F5F5F5',borderRadius:"20px",padding:"4px"}} value={item.value} />
+                          }
+                        </ListItemText>
+                      </Box>
                       </ListItem>
-                      <ListItem>
-                    </ListItem>
                   </Paper>
                 )
               })
             }
           </List>
-        </Paper>
-    </>
+    </Paper>
   )
 }

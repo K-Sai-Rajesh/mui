@@ -1,4 +1,4 @@
-import { Accordion, AccordionDetails, AccordionSummary, Box, Button, LinearProgress, List, ListItem, ListItemIcon, ListItemText, ThemeProvider, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, LinearProgress, List, ListItem, ListItemIcon, ListItemText, Paper, ThemeProvider, Typography, useMediaQuery, useTheme } from '@mui/material'
 import {ExpandMore,FiberManualRecord} from '@mui/icons-material'
 import React, { useState } from 'react'
 import { themes } from '../../Themes/Themes';
@@ -95,7 +95,7 @@ export default function Tone() {
     }
   return (
     <ThemeProvider theme={themes}>
-        <Box sx={{p:3}}>
+        <Paper elevation={0} sx={{p:3,height:'100%'}}>
             <Typography variant='h4' sx={{color:"#2bbbad",fontWeight:"600"}}>Tone</Typography>
                 {
                     button.map((item)=>{
@@ -159,7 +159,7 @@ export default function Tone() {
                         })
                     }
                 </List>
-                <Box sx={{px:3}}>
+                <Paper elevation={0} sx={{px:3}}>
                     {
                         accDisplay?
                         <>
@@ -217,8 +217,8 @@ export default function Tone() {
                         <>
                         </>
                     }
-                </Box>
-        </Box>
+                </Paper>
+        </Paper>
     </ThemeProvider>
   )
 }

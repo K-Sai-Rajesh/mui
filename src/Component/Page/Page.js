@@ -6,16 +6,14 @@ import Page3 from "../Page3/Page3";
 export function Page() {
   return (
     <>
-    <Grid container columnSpacing={1} sx={{backgroundColor:'#F5F5F5',margin:'none',p:1}}>      
-      <Grid item xs={12} sm={12} md={4} lg={5}>
-        <Page1/>
+    <Grid container rowSpacing={1} columnSpacing={1} sx={{backgroundColor:'#F5F5F5',margin:'none',p:1, height:'100vh'}}>      
+      <Grid item xs={12} sm={12} md={4} lg={5} sx={{height:'100%'}}>
+        <Page1 />
       </Grid>
-      <Grid item xs={12} sm={12} md={4} lg={4}>
-        <Paper elevation={0}>
-            <Page2/>
-        </Paper>
+      <Grid item xs={12} sm={12} md={4} lg={4} sx={{height:'100%'}}>
+          <Page2/>
       </Grid>
-      <Grid item xs={12} sm={12} md={4} lg={3}>
+      <Grid item xs={12} sm={12} md={4} lg={3} sx={{height:'100%'}}>
           <Page3 />
       </Grid>
     </Grid>

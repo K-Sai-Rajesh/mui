@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import NewTabs from './Tabs';
 import { AppContext } from '../GlobalState/AppContext';
 import Tone from '../AIComponents/Tone/Tone';
+import { Paper } from '@mui/material';
 
 
 export default function Page2() {
@@ -16,11 +16,9 @@ export default function Page2() {
 
   return (
     <>
-      <Box sx={{ width: '100%' }}>
-        {
-          Components()
-        }
-      </Box>
+    {
+      Components()
+    }
     </>
   );
 }
