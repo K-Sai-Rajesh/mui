@@ -103,7 +103,7 @@ export default function NewTabs() {
   }
   else if (isLg) {
     styles = {
-      width: '50%', p: 4,
+      width: '50%', p: 3,
       color: 'grey',
       "&:focus": {
         color: '#FFD700',
@@ -122,7 +122,7 @@ export default function NewTabs() {
   }
   else {
     styles = {
-      width: '50%', p: 5,
+      width: '50%', p:4,
       color: 'grey',
       "&:focus": {
         color: '#FFD700',
@@ -164,7 +164,7 @@ export default function NewTabs() {
         }
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <img src={nodata} alt='nodata' className='w-100' />
+        <img src={nodata} alt='nodata' className='w-100' style={{marginTop:'100px'}} />
       </TabPanel>
     </Paper>
   );

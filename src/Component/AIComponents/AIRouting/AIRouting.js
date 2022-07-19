@@ -14,7 +14,7 @@ export function AIRouting(){
             if(gstate.Headline) return(<Headline/>)
             else if(gstate.Corrections) return(<Correction/>)
             else if(gstate.Emotion) return(<Emotion />)
-            else return(<img src={nodata} alt='noda' className='w-100' />)
+            else return(<img src={nodata} alt='noda' className='w-100' style={{marginTop:'100px'}} />)
         }
     }
 
