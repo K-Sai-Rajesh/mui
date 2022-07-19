@@ -20,3 +20,8 @@
 .tox .tox-statusbar {
     display: none !important;
 }
+.tox-notification.tox-notification--in.tox-notification--warning {
+
+    display: none;
+
+}
