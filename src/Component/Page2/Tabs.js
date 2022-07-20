@@ -5,6 +5,7 @@ import { Paper, useMediaQuery, useTheme } from '@mui/material';
 import { AppContext } from '../GlobalState/AppContext';
 import { AIRouting } from '../AIComponents/AIRouting/AIRouting';
 import nodata from '../Images/nodata.webp'
+import './tabs.css'
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -141,7 +142,7 @@ export default function NewTabs() {
   }
 
   return (
-    <Paper elevation={0} sx={{ height: '100%' }}>
+    <Paper elevation={0} sx={{ height: '100%', }}>
       <Tabs value={value} sx={tabs} onChange={handleChange}
         TabIndicatorProps={{
           style: {
